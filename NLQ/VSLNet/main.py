@@ -158,9 +158,9 @@ def main(configs, parser):
                     word_ids, char_ids, vfeats, video_mask, query_mask
                 )
                 # compute loss
-                highlight_loss = model.compute_highlight_loss(
-                    h_score, h_labels, video_mask
-                )
+                # highlight_loss = model.compute_highlight_loss(
+                    # h_score, h_labels, video_mask)
+                
                 loc_loss = model.compute_loss(
                     start_logits, end_logits, s_labels, e_labels
                 )
