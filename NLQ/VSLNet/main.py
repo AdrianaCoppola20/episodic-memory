@@ -90,6 +90,11 @@ def main(configs, parser):
     if configs.mode.lower() == "train":
         if not os.path.exists(model_dir):
             os.makedirs(model_dir)
+        else:
+            import shutil
+            print(f"[INFO] Pulizia directory modello esistente: {model_dir}")
+            shutil.rmtree(model_dir)
+            os.makedirs(model_dir)
         eval_period = num_train_batches // 2
         save_json(
             vars(configs),
